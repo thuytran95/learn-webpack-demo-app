@@ -1,6 +1,7 @@
-const alertSevice = new AlertService();
-const componentService = new ComponentService();
-const run = (alertSevice, componentService) => {
+import { inputsAreValid } from "./utils/input-are-valid";
+import { parseInputs } from "./utils/parse-input";
+
+export const run = (alertSevice, componentService) => {
   alertSevice.hideErrors();
 
   componentService.onClick(() => {
@@ -9,12 +10,10 @@ const run = (alertSevice, componentService) => {
     const parsedInputs = parseInputs(...inputs);
     if (inputsAreValid(...parsedInputs)) {
       const [numA, numB] = parsedInputs;
-      componentService.innerText = numA + numB;
+      componentService.setResult(numA + numB);
     } else {
-      componentService.innerText = "";
+      componentService.setResult("");
       alertSevice.handleAdditionError(inputs, parsedInputs);
     }
   });
 };
-
-run(alertSevice, componentService);
