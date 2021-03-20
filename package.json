@@ -1,0 +1,21 @@
+{
+  "name": "learn-webpack-demo-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thuytran95/learn-webpack-demo-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.27.0",
+    "webpack-cli": "^4.5.0"
+  }
+}
