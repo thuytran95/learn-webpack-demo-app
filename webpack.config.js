@@ -7,6 +7,15 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   module: {
-    rules: [{ test: /\.css$/, use: ["style-loader", "css-loader"] }],
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader", //3.inject style into DOM
+          "css-loader", //2. turn css into common js
+          "sass-loader", // 1. turn sass into cs
+        ],
+      },
+    ],
   },
 };
