@@ -17,6 +17,25 @@ module.exports = {
           "sass-loader", // 1. turn sass into cs
         ],
       },
+      {
+        test: /\.html$/,
+        use: {
+          loader: "html-loader",
+          options: {
+            esModule: false, //fix img in file loader does not render
+          },
+        },
+      },
+      {
+        test: /\.(svg|png|jpg|gif)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[hash].[ext]",
+            outputPath: "imgs", //create a output file in dist
+          },
+        },
+      },
     ],
   },
 };
